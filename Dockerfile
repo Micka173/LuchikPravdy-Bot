@@ -13,7 +13,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN wget -O chroma_db.zip "ССЫЛКА_ИЗ_ШАГА_1" && \
+RUN wget -O chroma_db.zip "https://github.com/Micka173/LuchikPravdy-Bot/releases/download/v1/chroma_db.zip" && \
     unzip chroma_db.zip && \
     rm chroma_db.zip
 
