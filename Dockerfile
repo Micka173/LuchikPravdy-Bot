@@ -13,7 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN apt-get update && apt-get install -y wget unzip
-RUN wget -O chroma_db.zip "https://drive.google.com/uc?export=download&id=14K_86NOZWaSs2hUPQxY1Wny3yACUZklf" && unzip chroma_db.zip && rm chroma_db.zip
+RUN pip install gdown
+RUN gdown "https://drive.google.com/file/d/14K_86NOZWasS2hUPQxY1Wny3yACUZkF/view?usp=sharing" -O chroma_db.zip
+RUN unzip chroma_db.zip && rm chroma_db.zip
 
 CMD ["python", "bot.py"]
