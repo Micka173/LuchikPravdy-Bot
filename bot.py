@@ -20,10 +20,10 @@ print("Загружаю знания ...")
 embeddings = FastEmbedEmbeddings(
     model_name="intfloat/multilingual-e5-small"
 )
-vectorstore = Chroma(
-    persist_directory="chroma_db",
-    embedding_function=embeddings,
-    collection_name="medical_docs",
+# vectorstore = Chroma(
+#     persist_directory="chroma_db",
+#     embedding_function=embeddings,
+#     collection_name="medical_docs",
 )
 print("База знаний готова")
 init_db()
