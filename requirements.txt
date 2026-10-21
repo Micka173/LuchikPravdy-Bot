@@ -6,7 +6,7 @@ langchain-text-splitters
 chromadb
 pypdf
 beautifulsoup4
-sentence-transformers
+fastembed
 pytesseract
 Pillow
 opencv-python
