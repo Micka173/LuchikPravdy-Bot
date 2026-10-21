@@ -1,0 +1,13 @@
+aiogram
+groq
+langchain
+langchain-community
+langchain-text-splitters
+chromadb
+pypdf
+beautifulsoup4
+sentence-transformers
+pytesseract
+Pillow
+opencv-python
+httpx
