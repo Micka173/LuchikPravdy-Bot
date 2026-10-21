@@ -2,7 +2,7 @@ import asyncio
 import os
 from groq import Groq
 from aiogram import Bot, Dispatcher, types, F
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 from langchain_community.vectorstores import Chroma
 from aiogram.filters import Command
 from kids_db import init_db, save_child, get_child
@@ -17,8 +17,8 @@ import httpx
 groq_client = Groq(api_key=GROQ_API_KEY, timeout=httpx.Timeout(120.0, connect=30.0))
 # ЗАГРУЗКА ЗНАНИЯ
 print("Загружаю знания ...")
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+embeddings = FastEmbedEmbeddings(
+    model_name="intfloat/multilingual-e5-small"
 )
 vectorstore = Chroma(
     persist_directory="chroma_db",
