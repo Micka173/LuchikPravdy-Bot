@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN pip install gdown
-RUN gdown "https://drive.google.com/file/d/14K_86NOZWasS2hUPQxY1Wny3yACUZkF/view?usp=sharing" -O chroma_db.zip
+RUN wget -O chroma_db.zip "https://limewire.com/d/GVgrI#oVwr131aTX"
 RUN unzip chroma_db.zip && rm chroma_db.zip
 
 CMD ["python", "bot.py"]
