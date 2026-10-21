@@ -16,10 +16,10 @@ COPY . .
 # Устанавливаем wget, unzip и curl (для надежности)
 RUN apt-get update && apt-get install -y wget unzip curl
 
-# Скачиваем архив (используем curl с флагом -L для следования редиректам)
+# Скачиваем архив и сразу проверяем, что это действительно zip
 RUN curl -L -o chroma_db.zip "https://limewire.com/d/GVgrI#oVwr131aTX" && \
+    file chroma_db.zip && \
     unzip chroma_db.zip && \
     rm chroma_db.zip
-RUN unzip chroma_db.zip && rm chroma_db.zip
 
 CMD ["python", "bot.py"]
